@@ -53,7 +53,7 @@ jobs:
           name: run prediction tests
           when: always
           command: |
-            PYTHONPATH=. ./lab8/tasks/test.sh
+            cd lab8 || true; PYTHONPATH=. ./tasks/test.sh
 
       - store_artifacts:
           path: test-reports

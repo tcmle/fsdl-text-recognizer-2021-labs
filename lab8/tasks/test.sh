@@ -5,7 +5,7 @@ set +e
 FAILURE=false
 
 ./training/tests/test_run_experiment.sh || FAILURE=true
-pytest -v -rs --html=report.html --self-contained-html . || FAILURE=true
+pytest -v --junitxml=unit-testresults.xml . || FAILURE=true
 
 if [ "$FAILURE" = true ]; then
   echo "Tests failed"
